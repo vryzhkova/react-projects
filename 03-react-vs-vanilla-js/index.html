@@ -7,7 +7,8 @@
     <title>React Hello World</title>
   </head>
   <body>
-    <div id="app"></div>
+    <div id="react-app"></div>
+    <div id="vanilla-app"></div>
     <script
       src="https://unpkg.com/react@18.2.0/umd/react.development.js"
       crossorigin
@@ -19,12 +20,20 @@
 
     <script>
         // создаем новый компонент React, вторым аргументом - набор свойств для компонента, третий аргумент - текст
-        const helloWorldHeading = React.createElement('h1', null, 'Hello from React');
-        
-        const container = document.getElementById('app');
+        const reactHeading = React.createElement('h1', null, 'Hello from React');
+        console.log(reactHeading);
+        const container = document.getElementById('react-app');
         const root = ReactDOM.createRoot(container);
-        root.render(helloWorldHeading);
+        root.render(reactHeading);
         
     </script>
+
+    <script>
+        const vanillaJsHeading = document.createElement('h1');
+        console.log(vanillaJsHeading);
+        vanillaJsHeading.textContent = 'Hello from Vanilla JS';
+        document.getElementById('vanilla-app').appendChild(vanillaJsHeading);
+    </script>
+
   </body>
 </html>
